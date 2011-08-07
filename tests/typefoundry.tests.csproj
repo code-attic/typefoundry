@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6B3EF26C-198C-42D8-8EBB-EFEC3BE00AAB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>typefoundry.tests</RootNamespace>
+    <AssemblyName>typefoundry.tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\lib\MSpec\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AClassOf.cs" />
+    <Compile Include="AnInterfaceOf.cs" />
+    <Compile Include="BaseClass.cs" />
+    <Compile Include="ClosedClass.cs" />
+    <Compile Include="DI\ClosedImpl.cs" />
+    <Compile Include="DI\IHazzaMessage.cs" />
+    <Compile Include="DI\IMark.cs" />
+    <Compile Include="DI\IMessageProvider.cs" />
+    <Compile Include="DI\IShouldBeSingleton.cs" />
+    <Compile Include="DI\ITakeGenericParams.cs" />
+    <Compile Include="DI\MessageHazzer.cs" />
+    <Compile Include="DI\MessageProvider.cs" />
+    <Compile Include="DI\Multiple1.cs" />
+    <Compile Include="DI\Multiple2.cs" />
+    <Compile Include="DI\Multiple3.cs" />
+    <Compile Include="DI\OpenConcrete.cs" />
+    <Compile Include="DI\OpenImpl.cs" />
+    <Compile Include="DI\PlainConcrete.cs" />
+    <Compile Include="DI\SingletonA.cs" />
+    <Compile Include="DI\SingletonB.cs" />
+    <Compile Include="DI\when_asking_for_non_defined_type.cs" />
+    <Compile Include="DI\when_getting_all_instances_for_type.cs" />
+    <Compile Include="DI\when_instantiating_closed_generic.cs" />
+    <Compile Include="DI\when_instantiating_open_generic.cs" />
+    <Compile Include="DI\when_requesting_closed_type_from_generic.cs" />
+    <Compile Include="DI\when_requesting_concrete_open_type.cs" />
+    <Compile Include="DI\when_requesting_concrete_type.cs" />
+    <Compile Include="DI\when_requesting_type_created_by_delegate_factory.cs" />
+    <Compile Include="DI\when_testing_duplicate_singleton_definition.cs" />
+    <Compile Include="DI\when_testing_instantiation_baseline.cs" />
+    <Compile Include="DI\when_testing_simple_instantiation_scenario.cs" />
+    <Compile Include="DI\when_verifying_singletons.cs" />
+    <Compile Include="DI\with_closed_types_registered.cs" />
+    <Compile Include="DI\with_container.cs" />
+    <Compile Include="DI\with_duplicate_singletons_registered.cs" />
+    <Compile Include="DI\with_generics_registration.cs" />
+    <Compile Include="DI\with_multiple_classes_register_to_marker.cs" />
+    <Compile Include="DI\with_simple_registration.cs" />
+    <Compile Include="DI\with_singleton_registration.cs" />
+    <Compile Include="with_simple_container.cs" />
+    <Compile Include="IAmAnInterface.cs" />
+    <Compile Include="InheritsBaseClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="when_loading_auto_wired_types.cs" />
+    <Compile Include="when_loading_scan_index.cs" />
+    <Compile Include="when_retrieving_scanned_types.cs" />
+    <Compile Include="when_testing_compatibility_of_closed_class.cs" />
+    <Compile Include="when_testing_compatibility_of_open_class.cs" />
+    <Compile Include="when_test_closing_aclassof.cs" />
+    <Compile Include="when_test_closing_aninterfaceof.cs" />
+    <Compile Include="with_assembly_scanning.cs" />
+    <Compile Include="with_assembly_scanning_for_marker_interface.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\src\typefoundry.csproj">
+      <Project>{090F4182-4D0A-4FE8-AD50-941755DC52C0}</Project>
+      <Name>typefoundry</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
